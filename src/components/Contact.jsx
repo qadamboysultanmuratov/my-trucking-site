@@ -1,12 +1,14 @@
 import React from "react";
 
+
+
 export default function Contact() {
   return (
     <section className="py-20 bg-white" id="contact">
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         {/* Text Content */}
         <div>
-          <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
+          <h2 className="text-3xl font-bold mb-4">Contact now</h2>
           <p className="mb-6 text-gray-700">
             Call us now we are 24/7
           </p>
