@@ -1,0 +1,33 @@
+/* Import slick carousel styles first */
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+/* Then Tailwind layers */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.slick-dots li.slick-active div {
+  background-color: #2563eb; /* Tailwind's blue-600 */
+}
+
+/* Allow slides to show fully (shadows, rounded corners) */
+.slick-list {
+  overflow: visible !important;
+}
+
+/* Prevent the entire page from scrolling horizontally */
+body {
+  overflow-x: hidden;
+}
+
+
+.slick-track {
+  display: flex !important;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
