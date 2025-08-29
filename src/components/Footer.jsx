@@ -43,6 +43,12 @@ export default function Footer() {
                 Services
               </a>
             </li>
+            
+            <li>
+              <a href="#workwithus" className="hover:text-blue-400 transition">
+                Join us
+              </a>
+            </li>
             <li>
               <a href="#trustedby" className="hover:text-blue-400 transition">
                 Partners

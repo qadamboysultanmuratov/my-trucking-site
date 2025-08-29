@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import WhyChooseUs from "./components/WhyChooseUs";
 import TrustedBy from "./components/TrustedBy";
 import StaffCarousel from "./components/StaffCarousel";
+import WorkWithUs from "./components/WorkWithUs";
 
 
 export default function App() {
@@ -20,7 +21,7 @@ export default function App() {
         <section id="whychooseus"><WhyChooseUs /></section>
         <section id="services"><Services /></section>
         <section id="trustedby"><TrustedBy /></section>
-        
+        <section id="workwithus"><WorkWithUs /></section>
         
         
         

@@ -15,7 +15,9 @@ export default function Navbar() {
   { id: "home", label: "Home" },
   { id: "whychooseus", label: "Why Us?" },
   { id: "services", label: "Services" },
+  
   { id: "trustedby", label: "Partners" },
+  { id: "workwithus", label: "Join us" },
   { id: "about", label: "About us" },
   { id: "staffcarousel", label: "Our Team" },
 ];
