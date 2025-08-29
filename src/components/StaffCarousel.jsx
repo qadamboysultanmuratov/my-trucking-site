@@ -3,7 +3,21 @@ import Slider from "react-slick";
 import { motion } from "framer-motion";
 import { Mail, Phone, User } from "lucide-react";
 
-// Carousel settings
+// ✅ Hook to detect mobile
+function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth < breakpoint);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, [breakpoint]);
+
+  return isMobile;
+}
+
+// ✅ Carousel settings
 const settings = {
   dots: true,
   infinite: true,
@@ -21,7 +35,7 @@ const settings = {
       },
     },
     {
-      breakpoint: 768, // Covers most phones
+      breakpoint: 768,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -30,6 +44,7 @@ const settings = {
   ],
 };
 
+// ✅ Team members data
 const team = [
   {
     name: "Abdul Qurbanov ",
@@ -103,9 +118,11 @@ const team = [
   },
 ];
 
+// ✅ Main component
 export default function Team() {
   const cardRefs = useRef([]);
   const [minHeight, setMinHeight] = useState(0);
+  const isMobile = useIsMobile(768); // hide on <768px screens
 
   useEffect(() => {
     if (cardRefs.current.length) {
@@ -114,6 +131,9 @@ export default function Team() {
       setMinHeight(max);
     }
   }, []);
+
+  // ✅ do not render on mobile
+  if (isMobile) return null;
 
   return (
     <section className="py-20 bg-gray-50 overflow-x-hidden" id="team">

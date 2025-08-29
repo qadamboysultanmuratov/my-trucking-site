@@ -1,17 +1,32 @@
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
+
+// ✅ Hook to detect mobile
+function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth < breakpoint);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, [breakpoint]);
+
+  return isMobile;
+}
 
 function TrustedBy() {
   const logos = [
-  "/images/brokers/broker1.webp",
-  "/images/brokers/broker2.webp",
-  "/images/brokers/broker3.webp",
-  "/images/brokers/broker4.webp",
-  "/images/brokers/broker5.webp",
-  "/images/brokers/broker6.webp",
-  "/images/brokers/broker7.webp",
-  "/images/brokers/broker8.webp",
-  "/images/brokers/broker9.webp",
-];
+    "/images/brokers/broker1.webp",
+    "/images/brokers/broker2.webp",
+    "/images/brokers/broker3.webp",
+    "/images/brokers/broker4.webp",
+    "/images/brokers/broker5.webp",
+    "/images/brokers/broker6.webp",
+    "/images/brokers/broker7.webp",
+    "/images/brokers/broker8.webp",
+    "/images/brokers/broker9.webp",
+  ];
 
   const settings = {
     dots: false,
@@ -30,6 +45,11 @@ function TrustedBy() {
       { breakpoint: 480, settings: { slidesToShow: 2 } },
     ],
   };
+
+  const isMobile = useIsMobile(768); // ✅ hide on <768px screens
+
+  // ✅ don’t render on mobile
+  if (isMobile) return null;
 
   return (
     <section className="py-16 bg-gray-50">
