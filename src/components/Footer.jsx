@@ -35,7 +35,7 @@ export default function Footer() {
             </li>
             <li>
               <a href="#whychooseus" className="hover:text-blue-400 transition">
-                Why us? 
+                Why us?
               </a>
             </li>
             <li>
@@ -43,7 +43,6 @@ export default function Footer() {
                 Services
               </a>
             </li>
-            
             <li>
               <a href="#workwithus" className="hover:text-blue-400 transition">
                 Join us
@@ -64,13 +63,21 @@ export default function Footer() {
                 Our team
               </a>
             </li>
-            
             <li>
               <a href="#contact" className="hover:text-blue-400 transition">
                 Contact
               </a>
             </li>
-            
+            <li>
+              <a href="/privacy-policy" className="hover:text-blue-400 transition">
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a href="/terms" className="hover:text-blue-400 transition">
+                Terms & Conditions
+              </a>
+            </li>
           </ul>
         </motion.div>
 
@@ -95,7 +102,10 @@ export default function Footer() {
             <a href="#" className="hover:text-blue-400 transition">
               <Linkedin size={20} />
             </a>
-            <a href="mailto:dispatchack@gmail.com" className="hover:text-blue-400 transition">
+            <a
+              href="mailto:dispatchack@gmail.com"
+              className="hover:text-blue-400 transition"
+            >
               <Mail size={20} />
             </a>
           </div>
@@ -103,7 +113,20 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-gray-700 mt-12 pt-6 text-center text-gray-500 text-sm">
-        © {new Date().getFullYear()} ACK Trans Inc. All rights reserved. <p>Made by Qadamboy Sultanmuraov</p>
+        © {new Date().getFullYear()} ACK Trans Inc. All rights reserved.
+        <p>
+          <a
+            href="/privacy-policy"
+            className="hover:text-blue-400 transition"
+          >
+            Privacy Policy
+          </a>{" "}
+          |{" "}
+          <a href="/terms" className="hover:text-blue-400 transition">
+            Terms & Conditions
+          </a>
+        </p>
+        <p className="mt-2">Made by Qadamboy Sultanmuraov</p>
       </div>
     </footer>
   );
